@@ -17,7 +17,7 @@ numero int(16),
 cvv int(4),
 data_expiracao date,
 nome_usuario varchar(50),
-valido varchar(50),
+valido boolean,
 data_cadastro date,
 PRIMARY key (id));
 
