@@ -59,4 +59,29 @@ values  ('1', '1', '123.23', '2021-06-07' ),
 		('3', '3', '876.21','2021-06-07' ),
 		('4', '4', '98.32', '2021-06-09' );
     
+    
+--Insert de dados
+select * from usuario order by nome asc;
 
+select * from cartao where valido = 1 order by data_cadastro asc;
+
+select 
+transacao.id_usuario, 
+transacao.id_cartao, 
+transacao.valor, 
+transacao.data_cadastro,
+usuario.nome, 
+usuario.imagem, 
+usuario.nome_usuario, 
+usuario.data_cadastro data_cadastro_usuario,
+cartao.numero, 
+cartao.cvv, 
+cartao.data_expiracao, 
+cartao.valido, 
+cartao.data_cadastro data_cadastro_cartao
+from transacao transacao
+inner join usuario usuario
+on transacao.id_usuario = usuario.id 
+inner join cartao cartao 
+on transacao.id_cartao = cartao.id
+order by transacao.data_cadastro desc;
